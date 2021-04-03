@@ -1,3 +1,4 @@
+import random
 from itertools import product
 from pathlib import Path
 from typing import Dict, List, Tuple
@@ -8,7 +9,8 @@ from streamlit import cache
 
 @cache()
 def make_reward(tops: List[Path], bottoms: List[Path], shoe: List[Path]):
-    combi = product(tops, bottoms, shoe)
+    combi = list(product(tops, bottoms, shoe))
+    random.shuffle(combi)
     return {combi: rank + 1 for rank, combi in enumerate(combi)}
 
 

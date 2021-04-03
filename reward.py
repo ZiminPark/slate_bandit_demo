@@ -9,8 +9,7 @@ from streamlit import cache
 
 @cache()
 def make_reward(tops: List[Path], bottoms: List[Path], shoe: List[Path]):
-    combi = list(product(tops, bottoms, shoe))
-    random.shuffle(combi)
+    combi = product(tops, bottoms, shoe)
     return {combi: rank + 1 for rank, combi in enumerate(combi)}
 
 

@@ -9,7 +9,6 @@ bottom_fn = get_fn(clothe_path / 'bottom')
 shoe_fn = get_fn(clothe_path / 'shoe')
 combi_reward = make_reward(top_fn, bottom_fn, shoe_fn)
 
-st.title('소개팅 옷 고르기')
 st.sidebar.title('상의, 하의, 신발 선택')
 
 top = make_selectbox(top_fn)
